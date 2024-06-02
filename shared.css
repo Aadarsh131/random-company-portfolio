@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+button{
+  text-transform: uppercase;
+  /* font-family: "Poppins"; */
+  letter-spacing: 1.4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight:600;
+}
+
+h1 {
+  font-size: 45px;
+  margin-bottom: 60px;
+}
+
+h2 {
+  color: #FF3147;
+  /* font-family: "Cormorant SC"; */
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+p{
+  font-size: 16px;
+  /* font-family: "Poppins"; */
+}

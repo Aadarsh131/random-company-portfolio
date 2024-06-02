@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fyle assignment</title>
+  
+  <!-- Adding bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  
+
+  
+  <!-- Cormorant SC -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    
+    <!-- poppins -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="services-section.css">
+    <!-- Adding Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+    <!-- <script src="index.js"></script> -->
+    <script src="slider.js"></script>
+
+
+</head>
+<body>
+  <!-- header section -->
+  <section class="company-details-section container">
+    <div class="row">
+      <div class="col-6 company-details">
+        <h2>Award Winning</h2> 
+        <div class="company-industry">Digital Marketing Agency</div>
+        <p style="margin-bottom: 60px;">Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac at purus, Morbi sed lacus nec risus finibus feugiat et fermentum</p>
+        <button class="contact-btn">contact us</button>
+      </div>
+      <div class="col head-image">
+      </div>
+    </div>
+  </section>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+  
+
+
+  <!-- services section -->
+<section id="services-section" class="container">
+    <h2>What we do</h2>
+    <span><h1>Company provide for you</h1></span>
+    <span><p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac at purus, Morbi sed lacus nec risus finibus feugiat et fermentum</p></span>
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <ul class="carousel">
+        <li class="card">
+          <div class="img"><img src="images/img-1.jpg" alt="img" draggable="false"></div>
+          <h2>Blanche Pearson</h2>
+          <span>Sales Manager</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-2.jpg" alt="img" draggable="false"></div>
+          <h2>Joenas Brauers</h2>
+          <span>Web Developer</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-3.jpg" alt="img" draggable="false"></div>
+          <h2>Lariach French</h2>
+          <span>Online Teacher</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-4.jpg" alt="img" draggable="false"></div>
+          <h2>James Khosravi</h2>
+          <span>Freelancer</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-5.jpg" alt="img" draggable="false"></div>
+          <h2>Kristina Zasiadko</h2>
+          <span>Bank Manager</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-6.jpg" alt="img" draggable="false"></div>
+          <h2>Donald Horton</h2>
+          <span>App Designer</span>
+        </li>
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+    </section>
+
+    <!-- we are best section -->
+    <section id="why-choose-us-section" class="container">
+      <h2 >why choose us</h2>
+      <h1 >Why we are Best</h1>
+      <div class="row">
+        <div class="col">
+          <div id="features-img1"></div>
+          <div class="features-heading">
+            Clarified Vision & Target
+          </div>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+        </div>
+        <div class="col">
+          <div id="features-img2"></div>
+          <div class="features-heading">
+            Clarified Vision & Target
+          </div>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+        </div>
+        <div class="col">
+          <div id="features-img3"></div>
+          <div class="features-heading">
+            Clarified Vision & Target
+          </div>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+        </div>
+        <div class="col">
+          <div id="features-img4"></div>
+          <div class="features-heading">
+            Clarified Vision & Target
+          </div>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- our projects section -->
+    <section id="our-project-section" class="container">
+      <h2 >Our project</h2>
+      <h1>why we are best</h1>
+      <div class="row">
+        <div class="col-6 project-image">Image</div>
+        <div class="col">
+          <div class="row justify-content-start">
+            <div class="col">
+              <div class="projects">
+                <div class="features-heading">
+                Genderless Kei – Japan’s Hot 
+                </div>
+                <p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-start">
+            <div class="col">
+              <div class="projects">
+                <div class="features-heading">
+                Better Strategy & Quality
+                </div>
+                <p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-start">
+            <div class="col">
+              <div class="projects">
+                <div class="features-heading">
+                Genderless Kei – Japan’s Hot
+                </div>
+                <p>Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- company growth section -->
+    <section id="company-growth-section" class="container">
+      <h2> Experts Growths</h2>
+      <h1>Our company growth</h1>
+      <div class="row">
+        <div class="col">
+          <div class="icon">icon</div>
+          <div class="number-figure">199 +</div>
+          <div>Staticfied Customers</div>
+        </div>
+
+        <div class="col">
+          <div class="icon">icon</div>
+          <div class="number-figure">199 +</div>
+          <div>Staticfied Customers</div>
+        </div>
+
+        <div class="col">
+          <div class="icon">icon</div>
+          <div class="number-figure">199 +</div>
+          <div>Staticfied Customers</div>
+        </div>
+
+        <div class="col">
+          <div class="icon">icon</div>
+          <div class="number-figure">199 +</div>
+          <div>Staticfied Customers</div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
