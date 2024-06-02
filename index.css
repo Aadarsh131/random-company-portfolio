@@ -11,12 +11,14 @@
   text-transform: uppercase;
   font-size: 60px;
   text-align: left;
-  /* font-family: "Cormorant SC"; */
+  font-family: "Cormorant SC";
   font-weight: bold;
   margin-bottom: 50px;
 }
 
 .contact-btn{
+  font-family: 'Cormorant SC';
+  font-size: 14px;
   background-color: #FF3147;
   color: #FFFFFF;
   border-radius: 2px;
@@ -41,6 +43,31 @@
   text-align: center;
 }
 
+#features-img1{
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20.13px;
+}
+#features-img2{
+  /* height: 64.87px;
+  width: 70.01px; */
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20.13px;
+}#features-img3{
+  /* height: 74.9px;
+  width: 68px; */
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20.13px;
+}#features-img4{
+  /* width: 69.73px;
+  height: 69.72px; */
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20.13px;
+}
+
 .features-heading{
   font-size: 20px;
   font-weight: bold;
@@ -61,22 +88,112 @@
 .projects{
   padding: 34px 30px;
   text-align: left;
+  background-color: #F6F6F6;
+}
+
+#project-1{
+  background-color: #FF3147;
+  color: #FFFFFF;
+}
+
+#project-image1{
+  background-image: url(./static/images/img1.png);
+  background-size: cover;
+  border-radius: 1%;
+}
+
+#project-image2{
+  background-image: url(./static/images/img2.jpg);
+  background-size: cover;
+  display: none;
+  border-radius: 1%;
+}
+#project-image3{
+  background-image: url(./static/images/img3.jpg);
+  background-size: cover;
+  display: none;
+  border-radius: 1%;
 }
 
 .projects:hover{
-
-  background-color: red;
   cursor: pointer;
+}
+
+#project-1:hover, #project-2:hover, #project-3:hover{
+  box-shadow: 3px 6px 20px #672C2C1F;
 }
 
 /***********************************************/
 /*Company Growth section */
 #company-growth-section{
   text-align: center;
+  margin-bottom: 233px;
 }
-.col{
+.figures{
   text-align: center;
 }
+.figures:hover{
+  box-shadow: 3px 6px 20px #672C2C1F;
+}
 .number-figure{
+  font: normal normal 300 60px/65px Poppins;      
+  text-transform: uppercase;
   margin-bottom: 10px;
+}
+.figure-about{
+  font: normal normal 300 20px/80px Poppins;
+}
+.icon{
+  margin-top: 34px;
+  height: 35.68px;
+  /* width: 35.68px; */
+  width: auto;
+  margin-bottom: 14px;
+}
+
+/***********************************************/
+/* feedback section */
+
+#feedback-section{
+  text-align: center;
+  margin-bottom: 100px;
+}
+.client-feedback{
+  font: normal normal normal 20px/34px Poppins;
+  text-align: left; 
+}
+.client-details{
+  text-align: left;
+  padding:0 150px; 
+}
+.author{
+  text-transform: uppercase;
+  font: 20px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  color: #FF3147;
+}
+.author-company{
+  font: normal normal 300 20px/34px Poppins;
+  /* font-size: 20px; */
+  color: #808080;
+}
+
+
+/***********************************************/
+/* footer */
+#footer{
+  background-image: url('./static/images/NoPath-Copy.png');
+  height: 310px ;
+  position: relative;
+}
+
+#group-500{
+  position: absolute;
+  background-image: url(./static/images/Group500.png);
+  background-repeat: no-repeat;
+  height: 56px;
+  width: 1170px;
+  top: 50%;
+  left: calc(50%-1170px);
 }
