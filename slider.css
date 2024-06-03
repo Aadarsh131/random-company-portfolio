@@ -1,34 +1,49 @@
-.wrapper .carousel{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3) - 12px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 16px;
-  border-radius: 8px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+.dot {
+    cursor: pointer;
 }
 
-.carousel .card {
-  scroll-snap-align: start;
-  height: 500px;
-  list-style: none;
-  background: #fff;
+.wrapper{
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.wrapper .carousel{
+  font-size: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+  height: 526px;
   cursor: pointer;
-  padding-bottom: 15px;
-  flex-direction: column;
-  border-radius: 8px;
-} 
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 3);
+  border-radius: 1%;
+}
+.carousel img:first-child{
+  margin-left: 0px;
+}
+
 
 @media screen and (max-width: 900px) {
-  .wrapper .carousel {
-    grid-auto-columns: calc((100% / 2) - 9px);
+  .carousel img{
+    width: calc(100% / 2);
   }
 }
 
-@media screen and (max-width: 600px) {
-  .wrapper .carousel {
-    grid-auto-columns: 100%;
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
   }
 }

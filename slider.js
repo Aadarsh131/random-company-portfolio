@@ -1,84 +1,90 @@
-const wrapper = document.querySelector(".wrapper");
-const carousel = document.querySelector(".carousel");
-const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-const arrowBtns = document.querySelectorAll(".wrapper i");
-const carouselChildrens = [...carousel.children];
+$(document).ready(function () {
 
-let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+    const $carousel = $(".carousel"),
+        $firstImg = $carousel.find("img").first(),
+        $arrowIcons = $(".wrapper i"),
+        $dots = $(".dot");
 
-// Get the number of cards that can fit in the carousel at once
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+    let isDragStart = false,
+        isDragging = false,
+        prevPageX,
+        prevScrollLeft,
+        positionDiff;
 
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
-carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-});
+    const showHideIcons = () => {
+        let scrollWidth = $carousel[0].scrollWidth - $carousel[0].clientWidth;
+        $arrowIcons.eq(0).css("display", $carousel.scrollLeft() == 0 ? "none" : "block");
+        $arrowIcons.eq(1).css("display", $carousel.scrollLeft() == scrollWidth ? "none" : "block");
+    };
 
-// Insert copies of the first few cards to end of carousel for infinite scrolling
-carouselChildrens.slice(0, cardPerView).forEach(card => {
-    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-});
+    const updateDots = () => {
+        let scrollLeft = $carousel.scrollLeft(),
+            imgWidth = $firstImg.width() + 14,
+            totalImgs = $carousel.find("img").length,
+            imagesPerSlide = totalImgs / 3; // Assuming there are three sets of images in total
 
-// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
-carousel.classList.add("no-transition");
-carousel.scrollLeft = carousel.offsetWidth;
-carousel.classList.remove("no-transition");
+        let index = Math.round(scrollLeft / (imgWidth * imagesPerSlide)); // Calculate index based on images per slide
 
-// Add event listeners for the arrow buttons to scroll the carousel left and right
-arrowBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+        $dots.each(function (i) {
+            if (i === index) {
+                $(this).attr("src", "./static/images/1.svg");
+            } else {
+                $(this).attr("src", "./static/images/2.svg");
+            }
+        });
+    };
+
+    $arrowIcons.each(function () {
+        $(this).on("click", function () {
+            let firstImgWidth = $firstImg.width() + 14;
+            $carousel.scrollLeft($carousel.scrollLeft() + ($(this).attr("id") == "left" ? -firstImgWidth : firstImgWidth));
+            setTimeout(() => {
+                showHideIcons();
+                updateDots();
+            }, 60);
+        });
     });
-});
 
-const dragStart = (e) => {
-    isDragging = true;
-    carousel.classList.add("dragging");
-    // Records the initial cursor and scroll position of the carousel
-    startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
-}
+    const dragStart = (e) => {
+        isDragStart = true;
+        prevPageX = e.pageX || e.originalEvent.touches[0].pageX;
+        prevScrollLeft = $carousel.scrollLeft();
+    };
 
-const dragging = (e) => {
-    if(!isDragging) return; // if isDragging is false return from here
-    // Updates the scroll position of the carousel based on the cursor movement
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-}
+    const dragging = (e) => {
+        if (!isDragStart) return;
+        e.preventDefault();
+        isDragging = true;
+        $carousel.addClass("dragging");
+        positionDiff = (e.pageX || e.originalEvent.touches[0].pageX) - prevPageX;
+        $carousel.scrollLeft(prevScrollLeft - positionDiff);
+        showHideIcons();
+    };
 
-const dragStop = () => {
-    isDragging = false;
-    carousel.classList.remove("dragging");
-}
+    const dragStop = () => {
+        isDragStart = false;
+        $carousel.removeClass("dragging");
 
-const infiniteScroll = () => {
-    // If the carousel is at the beginning, scroll to the end
-    if(carousel.scrollLeft === 0) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-        carousel.classList.remove("no-transition");
-    }
-    // If the carousel is at the end, scroll to the beginning
-    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.offsetWidth;
-        carousel.classList.remove("no-transition");
-    }
+        if (!isDragging) return;
+        isDragging = false;
+    };
 
-    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
-    clearTimeout(timeoutId);
-    if(!wrapper.matches(":hover")) autoPlay();
-}
+    $carousel.on("mousedown touchstart", dragStart);
+    $(document).on("mousemove touchmove", dragging);
+    $(document).on("mouseup touchend", dragStop);
 
-const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-    // Autoplay the carousel after every 2500 ms
-    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
-}
-autoPlay();
+    // Update dots initially and on scroll
+    updateDots();
+    $carousel.on("scroll", updateDots);
 
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("scroll", infiniteScroll);
-wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-wrapper.addEventListener("mouseleave", autoPlay);
+    // Add click event to dots to move carousel
+    $dots.each(function (index) {
+        $(this).on("click", function () {
+            let imgWidth = $firstImg.width() + 14;
+            let scrollPosition = imgWidth * (index * ($carousel.find("img").length / 3)); // Calculate scroll position based on index
+            $carousel.scrollLeft(scrollPosition);
+            setTimeout(updateDots, 60);
+        });
+    });
+
+})

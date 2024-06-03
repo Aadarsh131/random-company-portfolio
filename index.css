@@ -1,4 +1,169 @@
+/* Modal */
+.modal-overlay{
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0,0.7);
+}
+
+.modal-content{
+  padding: 40px;
+  height: 500px;
+  width: 600px;
+  /* width: 450px;
+  height: 362px; */
+  position: fixed;
+  left: calc((100% - 600px)/2);
+  top: calc((100% - 500px)/2);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 1%; 
+  letter-spacing: 0.4px;
+
+}
+/* Add Animation */
+@keyframes animatetop {
+  from {top:-100px; opacity:0} 
+  to {top:calc((100%-500px)/2); opacity:1}
+}
+
+ .modal-content{
+  font-family: aktiv-grotesk;
+  font-size: 20px;
+  }
+
+  .form-heading{
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+.input-data{
+  width: 100%;
+  height: 40px;
+  margin: 30px 0;
+  letter-spacing: 0.34px;
+}
+
+.input-data input{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid #6F718F99;
+  outline: none;
+}
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #6F718F99;
+}
+
+.input-data label{
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  color: #6F718F99;
+  transition: all 0.3s ease;
+}
+
+.consent-statement{
+  font-family: aktiv-grotesk;
+  font-size: 15px;
+  color: #616678;
+  margin-bottom: 22px;
+}
+
+.submit-btn{
+  background: #FF3366 0% 0% no-repeat padding-box;
+  color: white;
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  border-style:solid;
+  border-radius: 8px;
+}
+
+/*************************************************/
+/***checkbox **/
+.customcheck {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.customcheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 21px;
+    width: 21px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 3px solid #FF3366;
+}
+
+
+.customcheck input:checked ~ .checkmark {
+    background-color: #FF3366;
+    border-radius: 5px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.customcheck input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.customcheck .checkmark:after {
+    left: 5px;
+    top: 0px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*****************************************************************/
 /* company-details-section */
+
+.container {
+   max-width: 50% !important;/*Set your own width %; */
+}
+
 .company-details-section{
   margin: 100px auto;
 }
@@ -33,6 +198,21 @@
     background-size: cover;
     background-position: center;
     margin-left: 50px;
+}
+
+/***********************************************/
+/* SERVICES SECTION */
+.card > img{
+  background-size: cover;
+  /* background: none;  */
+}
+#services-section{
+  margin: 100px auto;
+}
+
+.dot{
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 /***********************************************/
@@ -184,6 +364,7 @@
 /* footer */
 #footer{
   background-image: url('./static/images/NoPath-Copy.png');
+  background-color: #FF3147;
   height: 310px ;
   position: relative;
 }
