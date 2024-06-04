@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     const $carousel = $(".carousel"),
         $firstImg = $carousel.find("img").first(),
         $arrowIcons = $(".wrapper i"),
@@ -19,8 +18,8 @@ $(document).ready(function () {
 
     const updateDots = () => {
         let scrollLeft = $carousel.scrollLeft(),
-            imgWidth = $firstImg.width() + 14,
-            totalImgs = $carousel.find("img").length,
+            imgWidth = $firstImg.width() + 28, // Adjust for margin
+            totalImgs = $carousel.find(".img-container").length,
             imagesPerSlide = totalImgs / 3; // Assuming there are three sets of images in total
 
         let index = Math.round(scrollLeft / (imgWidth * imagesPerSlide)); // Calculate index based on images per slide
@@ -36,7 +35,7 @@ $(document).ready(function () {
 
     $arrowIcons.each(function () {
         $(this).on("click", function () {
-            let firstImgWidth = $firstImg.width() + 14;
+            let firstImgWidth = $firstImg.width() + 28; // Adjust for margin
             $carousel.scrollLeft($carousel.scrollLeft() + ($(this).attr("id") == "left" ? -firstImgWidth : firstImgWidth));
             setTimeout(() => {
                 showHideIcons();
@@ -80,11 +79,10 @@ $(document).ready(function () {
     // Add click event to dots to move carousel
     $dots.each(function (index) {
         $(this).on("click", function () {
-            let imgWidth = $firstImg.width() + 14;
-            let scrollPosition = imgWidth * (index * ($carousel.find("img").length / 3)); // Calculate scroll position based on index
+            let imgWidth = $firstImg.width() + 28; // Adjust for margin
+            let scrollPosition = imgWidth * (index * ($carousel.find(".img-container").length / 3)); // Calculate scroll position based on index
             $carousel.scrollLeft(scrollPosition);
             setTimeout(updateDots, 60);
         });
     });
-
-})
+});
