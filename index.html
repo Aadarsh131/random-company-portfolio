@@ -43,10 +43,10 @@
 <div class="modal-overlay">
   <div class="modal-content">
     <div class="form-heading">Talk to us</div>
-    <form action="#">
+    <form action="https://getform.io/f/pboxnvja" method="post" id="contact-form">
         <div class="form row">
           <div class="input-data col">
-            <input type="email" id='email' required>
+            <input type="email" id='email' name="email" required>
             <div class="underline"></div>
             <label for ='email'>Work email*</label>
             <!-- remove * after transform -->
@@ -55,19 +55,19 @@
         </div>
         <div class="form row">
           <div class="input-data col">
-            <input type="text" id='firstName'required>
+            <input type="text" id='firstName' name = "name" required>
             <div class="underline"></div>
             <label for = "firstName">First Name*</label>
           </div>
           <div class="input-data col">
-            <input type="text" id="lastName" required>
+            <input type="text" id="lastName" name="name" required>
             <div class="underline"></div>
             <label for="lastName">Last Name*</label>
           </div>
         </div>
         <div class="form" style="align-items:baseline; margin-top: 40.5px;">
             <label class="customcheck"> <div class="consent-statement">I agree to Fyle's terms and conditions, and provide consent to send me communication.</div>
-              <input type="checkbox" checked="checked">
+              <input type="checkbox" checked="checked" id="consent-checkbox">
               <span class="checkmark"></span>
             </label>
       </div>
@@ -217,7 +217,9 @@
       <h2>Client's feedback</h2>
       <h1>What people say about us !</h1>
       <div class="client-details">
-      <p  class="client-feedback">Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.</p>
+        <p  class="client-feedback">
+          Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original.</p>
+        <!-- <img src="./static/images/Quotemarks-left@2x.png" class="quote-mark"/> -->
       <span class="author">Jannat tumpa</span> <span class="author-company">- COO, AMERIMAR ENTERPRISES, INC.</span></div>  
     </section>
 

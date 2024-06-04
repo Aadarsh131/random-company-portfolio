@@ -44,4 +44,21 @@ $(document).ready(function () {
         pimg2.hide()
         pimg3.show()
     })
+
+    $('#contact-form').on('submit', function(event) {
+                event.preventDefault();
+
+                // Ensure all fields are filled
+                const email = $('#email').val();
+                const firstName = $('#firstName').val();
+                const lastName = $('#lastName').val();
+                const consentChecked = $('#consent-checkbox').is(':checked');
+
+                if (email && firstName && lastName && consentChecked) {
+                    // If all fields are valid, submit the form
+                    this.submit();
+                } else {
+                    alert('Please fill in all fields and agree to the terms and conditions.');
+                }
+            });
 });
