@@ -6,7 +6,7 @@
 
 button{
   text-transform: uppercase;
-  /* font-family: "Poppins"; */
+  font-family: "Poppins";
   letter-spacing: 1.4px;
   cursor: pointer;
   font-size: 14px;

@@ -31,7 +31,7 @@
 }
 
  .modal-content{
-  font-family: aktiv-grotesk;
+  font-family: "Poppins";
   font-size: 20px;
   }
 
@@ -76,7 +76,6 @@
 }
 
 .consent-statement{
-  font-family: aktiv-grotesk;
   font-size: 15px;
   color: #616678;
   margin-bottom: 22px;
@@ -203,9 +202,6 @@
 #services-section {
   margin: 100px auto;
 }
-.card > img {
-  background-size: cover;
-}
 
 .img-container {
   position: relative;
@@ -239,7 +235,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1200px;
+  margin-left: 15%; /*(100% - 70%)/2  where 70% is the custom container width */
+  margin-right: 15%;
   margin-bottom: 40px;
 }
 
@@ -264,12 +261,13 @@
   cursor: pointer;
   object-fit: cover;
   user-select: none;
-  width: 100%; /* Adjust to fit the container */
+  width: 100%; /*Adjust to fit the container */
+  /* width: 300px; */
   border-radius: 1%;
 }
 
 .dots {
-  margin-left: 10px;
+  margin-left: 15%;
 }
 
 .dot {
@@ -351,6 +349,9 @@
   margin-bottom: 220px;
   text-align: center;
 }
+.features-heading{
+  font-family: "Cormorant SC";
+}
 
 .projects{
   padding: 34px 30px;
@@ -428,14 +429,21 @@
 .client-feedback{
   font: normal normal normal 20px/34px Poppins;
   text-align: left; 
-  position:relative;
-  top:0;
+  /* position:relative; */
 }
 .client-details{
   position: relative;
   /* display: inline-block; */
   text-align: left;
   padding:0 150px; 
+}
+
+.quote-mark{
+  position: absolute;
+  height: 45px;
+  top: 0;
+  left: 1;
+
 }
 
 .author{
